@@ -1,9 +1,10 @@
+package com.beginsecure.domain;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Prog {
-
     public static void main(String[] args) {
         try {
             Scanner scanner = new Scanner(new File("file.txt"));
@@ -14,15 +15,15 @@ public class Prog {
             for (int i = 0; i < numbers.length; i++) {
                 intNumbers[i] = Integer.parseInt(numbers[i]);
             }
-            
+
             System.out.println("min: " + _min(intNumbers));
             System.out.println("max: " + _max(intNumbers));
             System.out.println("sum: " + _sum(intNumbers));
             System.out.println("mult: " + _mult(intNumbers));
-            
+
             scanner.close();
         } catch (FileNotFoundException e) {
-            System.err.println(e);
+            System.err.println("File not found.");
         }
     }
 
@@ -62,4 +63,3 @@ public class Prog {
         return mult;
     }
 }
-
